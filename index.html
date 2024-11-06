@@ -4,7 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saludo Personalizado</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            font-size: 16px;
+            padding: 10px;
+            margin: 5px;
+        }
+        #greetingMessage {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -14,6 +41,12 @@
         <button onclick="greetUser()">Saludar</button>
         <p id="greetingMessage"></p>
     </div>
-    <script src="script.js"></script>
+    <script>
+        function greetUser() {
+            const name = document.getElementById('nameInput').value;
+            const greetingMessage = name ? `Hola, ${name}!` : "Por favor, introduce tu nombre.";
+            document.getElementById('greetingMessage').textContent = greetingMessage;
+        }
+    </script>
 </body>
 </html>
