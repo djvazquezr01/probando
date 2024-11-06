@@ -1,1 +1,44 @@
-<h1>Página de ejemplo</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positivo o Negativo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        input, button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Es Positivo o Negativo?</h1>
+    <p>Introduce un número y te diré si es positivo o negativo.</p>
+    <input type="number" id="numInput" placeholder="Número">
+    <button onclick="checkPosNeg()">Comprobar</button>
+    <p id="result"></p>
+
+    <script>
+        function checkPosNeg() {
+            const num = parseFloat(document.getElementById('numInput').value);
+            const resultText = isNaN(num) ? "Introduce un número válido." : 
+                              (num > 0 ? "El número es positivo." : num < 0 ? "El número es negativo." : "El número es cero.");
+            document.getElementById('result').textContent = resultText;
+        }
+    </script>
+</body>
+</html>
+
